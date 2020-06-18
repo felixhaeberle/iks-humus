@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  background: #526b2d;
+}
+
+.navigation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  padding: 20px 60px 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.navigation-info {
+  padding-right: 30px;
+}
+
+.navigation-links {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  min-height: 130px;
+}
+
+.navigation-links p {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: #526b2d;
+  font-size: 15px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.navigation-links p:hover {
+  cursor: pointer;
+}
+
+.navigation-links p.prevItem {
+  align-self: flex-end;
+}
+
+.navigation-links p.nextItem {
+  margin-top: auto;
+}
+
+h1, h2, h3 {
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.touchpoint {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 30vw;
+  height: 100vh;
+  padding: 50px;
+  background: #fff;
+}
+
+@keyframes sonar {
+  from {
+    box-shadow: 0 0 0 0 #EBDA86, 0 0 4px 2px rgba(255, 255, 255, 0.2);
+  }
+  to {
+    box-shadow: 0 0 0 15px rgba(235, 218, 134, 0.2), 0 0 4px 2px rgba(255, 255, 255, 0.2);
+  }
+}
+
+.sonar-icon {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.sonar-icon > span.sonar {
+  text-decoration: none;
+  display: inline-block;
+}
+
+span.sonar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #AD9200;
+  border: 3px solid #EBDA86;
+  animation: sonar 2s ease-out infinite;
+  animation-delay: 300ms;
+}

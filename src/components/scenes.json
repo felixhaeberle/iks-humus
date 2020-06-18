@@ -1,0 +1,134 @@
+[{
+  "title": "Entstehung",
+  "description": "Really nice scene with really nice content",
+  "coordinates": {
+    "top": 500,
+    "left": 200
+  },
+  "touchpoints": [
+    {
+      "id": 1,
+      "name": "Interaction One",
+      "description": "Interaction with nice content",
+      "coordinates": {
+        "top": 200,
+        "left": 100
+      }
+    },{
+      "id": 4,
+      "name": "Interaction Four",
+      "description": "Interaction with really really nice content",
+      "coordinates": {
+        "top": 800,
+        "left": 100
+      }
+    }
+  ]
+},{
+  "title": "Gefahren",
+  "description": "Really nice scene with really nice content content",
+  "coordinates": {
+    "top": 100,
+    "left": 200
+  },
+  "touchpoints": [
+    {
+      "id": 3,
+      "name": "Interaction Three",
+      "description": "Interaction with really really really nice content",
+      "coordinates": {
+        "top": 100,
+        "left": 400
+      }
+    }
+  ]
+},{
+  "title": "Auswirkungen",
+  "description": "Really nice scene with really nice three content",
+  "coordinates": {
+    "top": 600,
+    "left": 100
+  },
+  "touchpoints": [
+    {
+      "id": 4,
+      "name": "Interaction Four",
+      "description": "Interaction with really nice nice scene with really content",
+      "coordinates": {
+        "top": 400,
+        "left": 300
+      }
+    },
+    {
+      "id": 5,
+      "name": "Interaction Five",
+      "description": "Interaction nice scene with really with really nice content",
+      "coordinates": {
+        "top": 150,
+        "left": 600
+      }
+    }
+  ]
+},{
+  "title": "Lösungen",
+  "description": "Really nice scene with really nice content",
+  "coordinates": {
+    "top": 800,
+    "left": 200
+  },
+  "touchpoints": [
+    {
+      "id": 5,
+      "name": "Interaction Five",
+      "description": "Interaction nice scene with really with really nice content",
+      "coordinates": {
+        "top": 200,
+        "left": 400
+      }
+    },
+    {
+      "id": 2,
+      "name": "Interaction Two",
+      "description": "Interaction with really nice scene with really nice content",
+      "coordinates": {
+        "top": 150,
+        "left": 500
+      }
+    },
+    {
+      "id": 1,
+      "name": "Interaction One",
+      "description": "Interaction nice scene with really with really nice content",
+      "coordinates": {
+        "top": 400,
+        "left": 550
+      }
+    }
+  ]
+},{
+  "title": "Politik",
+  "description": "Really nice scene with really nice scene with really nice content",
+  "coordinates": {
+    "top": 300,
+    "left": 600
+  },
+  "touchpoints": [
+    {
+      "id": 2,
+      "name": "Interaction Two",
+      "description": "Interaction with really nice content",
+      "coordinates": {
+        "top": 500,
+        "left": 200
+      }
+    },{
+      "id": 1,
+      "name": "Interaction One",
+      "description": "Interaction with really nice content",
+      "coordinates": {
+        "top": 400,
+        "left": 700
+      }
+    }
+  ]
+}]
