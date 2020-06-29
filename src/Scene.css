@@ -110,3 +110,13 @@ span.sonar {
   animation: sonar 2s ease-out infinite;
   animation-delay: 300ms;
 }
+
+/* Transition */
+
+.map-enter-active {
+  transition: all 300ms;
+}
+
+.map-exit-active {
+  transition: all 300ms;
+}

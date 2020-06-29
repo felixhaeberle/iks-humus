@@ -1,10 +1,12 @@
 [{
+  "id": 1,
   "title": "Entstehung",
   "description": "Really nice scene with really nice content",
   "coordinates": {
     "top": 500,
     "left": 200
   },
+  "sound": "../sounds/farm.mp3",
   "touchpoints": [
     {
       "id": 1,
@@ -25,12 +27,14 @@
     }
   ]
 },{
+  "id": 2,
   "title": "Gefahren",
   "description": "Really nice scene with really nice content content",
   "coordinates": {
     "top": 100,
     "left": 200
   },
+  "sound": "../sounds/farm.mp3",
   "touchpoints": [
     {
       "id": 3,
@@ -43,12 +47,14 @@
     }
   ]
 },{
+  "id": 3,
   "title": "Auswirkungen",
   "description": "Really nice scene with really nice three content",
   "coordinates": {
     "top": 600,
     "left": 100
   },
+  "sound": "../sounds/farm.mp3",
   "touchpoints": [
     {
       "id": 4,
@@ -70,12 +76,14 @@
     }
   ]
 },{
+  "id": 4,
   "title": "Lösungen",
   "description": "Really nice scene with really nice content",
   "coordinates": {
     "top": 800,
     "left": 200
   },
+  "sound": "../sounds/farm.mp3",
   "touchpoints": [
     {
       "id": 5,
@@ -106,12 +114,14 @@
     }
   ]
 },{
+  "id": 5,
   "title": "Politik",
   "description": "Really nice scene with really nice scene with really nice content",
   "coordinates": {
     "top": 300,
     "left": 600
   },
+  "sound": "../sounds/farm.mp3",
   "touchpoints": [
     {
       "id": 2,
