@@ -87,6 +87,7 @@ p {
   }
   to {
     box-shadow: 0 0 0 15px rgba(235, 218, 134, 0.2), 0 0 4px 2px rgba(255, 255, 255, 0.2);
+    opacity: 1;
   }
 }
 
@@ -107,16 +108,47 @@ span.sonar {
   border-radius: 50%;
   background-color: #AD9200;
   border: 3px solid #EBDA86;
+  opacity: 0;
   animation: sonar 2s ease-out infinite;
-  animation-delay: 300ms;
+  animation-delay: 2005ms;
 }
 
 /* Transition */
 
-.map-enter-active {
-  transition: all 300ms;
+.map {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
 }
 
-.map-exit-active {
-  transition: all 300ms;
+
+.map::before {
+  content: "";
+  position: absolute;
+  top: -100vh;
+  left: -100vw;
+  height: 600vh;
+  width: 600vw;
+  background: url('/image/map.svg') 0 0 no-repeat;
+  transform: translate3d(0px, 0px, 0);
+  transition: transform 2000ms ease-in;
+}
+.map.map-active-scene-1::before {
+  transform: translate3d(-201px, -303px, 0);
+}
+
+.map.map-active-scene-2::before{
+  transform: translate3d(-402px, -204px, 0);
+}
+.map.map-active-scene-3::before {
+  transform: translate3d(-303px, -507px, 0);
+}
+.map.map-active-scene-4::before {
+  transform: translate3d(-200px, -400px, 0);
+
+}
+.map.map-active-scene-5::before {
+  transform: translate3d(-100px, -90px), 0;
+
 }

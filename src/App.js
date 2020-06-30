@@ -1,11 +1,12 @@
 import React from 'react';
 import Scene from './components/Scene';
 import Navigation from './components/Navigation';
+import Map from './components/Map';
 import Sound from 'react-sound';
 import scenes from './components/scenes';
 import './Scene.css';
 
-let intervalCountVolumeUp, intervalCountVolumeDown;
+let intervalCountVolumeUp;
 
 class App extends React.Component {
   constructor(props) {
@@ -55,9 +56,9 @@ class App extends React.Component {
     clearInterval(interval);
   }
 
-  handleSoundSceneWillChange = () => {
-    intervalCountVolumeDown = setInterval(() => this.countVolumeDown(), 500);
-  }
+  // handleSoundSceneWillChange = () => {
+  //   intervalCountVolumeDown = setInterval(() => this.countVolumeDown(), 500);
+  // }
 
   countVolumeUp = () => {
     console.log(this.state.sound.volume)
@@ -88,6 +89,7 @@ class App extends React.Component {
 
     return (
       <div className="app">
+        <Map activeScene={this.state.activeScene} {...this.props}/>
         {this.state.scenes.map(scene => (
           (this.state.activeScene - 1) === this.state.scenes.indexOf(scene) 
           &&
@@ -111,7 +113,7 @@ class App extends React.Component {
               playStatus={Sound.status.PLAYING}
               volume={this.state.sound.volume}
               onLoad={this.handleSoundAfterLoading}
-              onFinishedPlaying={this.handleSongFinishedPlaying}/> 
+              onFinishedPlaying={this.handleSongFinishedPlaying}/>
           </div>
           ))}
       </div>

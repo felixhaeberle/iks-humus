@@ -5,8 +5,8 @@ function TouchpointMap(props) {
   return (
     <div className="touchpoints-map">
       {props.scene.touchpoints.map(touchpoint => (
-        <TouchpointMapPoint setActive={props.setActiveTouchpoint} key={touchpoint.id} {...touchpoint}/>
-      ))}
+          <TouchpointMapPoint setActive={props.setActiveTouchpoint} key={touchpoint.id} {...touchpoint}/>
+        ))}
     </div>
   );
 }
