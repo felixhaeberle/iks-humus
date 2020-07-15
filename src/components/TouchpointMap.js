@@ -1,13 +1,16 @@
 import React from 'react';
 import TouchpointMapPoint from './TouchpointMapPoint';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 function TouchpointMap(props) {
   return (
-    <div className="touchpoints-map">
+    <TransitionGroup className="touchpoints-map">
       {props.scene.touchpoints.map(touchpoint => (
-          <TouchpointMapPoint setActive={props.setActiveTouchpoint} key={touchpoint.id} {...touchpoint}/>
+        <CSSTransition timeout={2000} classNames={touchpoint} key={touchpoint.id} appear>
+          <TouchpointMapPoint setActive={props.setActiveTouchpoint} {...touchpoint}/>
+        </CSSTransition>
         ))}
-    </div>
+    </TransitionGroup>
   );
 }
 

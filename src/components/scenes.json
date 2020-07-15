@@ -6,23 +6,15 @@
     "top": 500,
     "left": 200
   },
-  "sound": "../sounds/farm.mp3",
+  "sound": "../sounds/01_Forest.mp3",
   "touchpoints": [
     {
       "id": 1,
       "name": "Was ist Humus?",
       "description": "",
       "coordinates": {
-        "top": 200,
-        "left": 100
-      }
-    },{
-      "id": 4,
-      "name": "Interaction Four",
-      "description": "Interaction with really really nice content",
-      "coordinates": {
-        "top": 800,
-        "left": 100
+        "top": 350,
+        "left": 500
       }
     }
   ]
@@ -34,15 +26,31 @@
     "top": 100,
     "left": 200
   },
-  "sound": "../sounds/city.mp3",
+  "sound": "../sounds/03_Factory.mp3",
   "touchpoints": [
     {
-      "id": 3,
-      "name": "Interaction Three",
+      "id": 2,
+      "name": "Klimawandel",
       "description": "Interaction with really really really nice content",
       "coordinates": {
-        "top": 100,
-        "left": 400
+        "top": 500,
+        "left": 870
+      }
+    },{
+      "id": 3,
+      "name": "Regenwurm",
+      "description": "Interaction with really really really nice content",
+      "coordinates": {
+        "top": 320,
+        "left": 900
+      }
+    },{
+      "id": 4,
+      "name": "Erosion",
+      "description": "Interaction with really really really nice content",
+      "coordinates": {
+        "top": 320,
+        "left": 460
       }
     }
   ]
@@ -54,24 +62,24 @@
     "top": 600,
     "left": 100
   },
-  "sound": "../sounds/farm.mp3",
+  "sound": "../sounds/03_Farm.mp3",
   "touchpoints": [
     {
-      "id": 4,
+      "id": 5,
       "name": "Interaction Four",
       "description": "Interaction with really nice nice scene with really content",
       "coordinates": {
-        "top": 400,
-        "left": 300
+        "top": 430,
+        "left": 250
       }
     },
     {
-      "id": 5,
+      "id": 6,
       "name": "Interaction Five",
       "description": "Interaction nice scene with really with really nice content",
       "coordinates": {
-        "top": 150,
-        "left": 600
+        "top": 520,
+        "left": 750
       }
     }
   ]
@@ -83,33 +91,24 @@
     "top": 800,
     "left": 200
   },
-  "sound": "../sounds/city.mp3",
+  "sound": "../sounds/03_Farm.mp3",
   "touchpoints": [
     {
-      "id": 5,
+      "id": 7,
       "name": "Interaction Five",
       "description": "Interaction nice scene with really with really nice content",
-      "coordinates": {
-        "top": 200,
-        "left": 400
-      }
-    },
-    {
-      "id": 2,
-      "name": "Interaction Two",
-      "description": "Interaction with really nice scene with really nice content",
       "coordinates": {
         "top": 150,
         "left": 500
       }
     },
     {
-      "id": 1,
-      "name": "Interaction One",
-      "description": "Interaction nice scene with really with really nice content",
+      "id": 8,
+      "name": "Interaction Two",
+      "description": "Interaction with really nice scene with really nice content",
       "coordinates": {
-        "top": 400,
-        "left": 550
+        "top": 250,
+        "left": 800
       }
     }
   ]
@@ -118,26 +117,26 @@
   "title": "Politik",
   "description": "Really nice scene with really nice scene with really nice content",
   "coordinates": {
-    "top": 300,
+    "top": 800,
     "left": 600
   },
-  "sound": "../sounds/farm.mp3",
+  "sound": "../sounds/05_Voices.mp3",
   "touchpoints": [
     {
-      "id": 2,
+      "id": 11,
       "name": "Interaction Two",
       "description": "Interaction with really nice content",
       "coordinates": {
-        "top": 500,
-        "left": 200
+        "top": 190,
+        "left": 210
       }
     },{
-      "id": 1,
+      "id": 10,
       "name": "Interaction One",
       "description": "Interaction with really nice content",
       "coordinates": {
-        "top": 400,
-        "left": 700
+        "top": 270,
+        "left": 590
       }
     }
   ]

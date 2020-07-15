@@ -7,8 +7,14 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      started: true,
+      started: false,
     };
+  }
+
+  handleStartScenes = () => {
+    this.setState({
+      started: true
+    });
   }
 
   render() {
@@ -16,8 +22,8 @@ class App extends React.Component {
     return (
       <div className="app">
         {(this.state.started === false
-          ? <Start />
-          : <ScenesContainer />)}
+          && <Start startScenes={this.handleStartScenes}/> )}
+          <ScenesContainer scenesStarted={this.state.started} />
       </div>
     )
   }

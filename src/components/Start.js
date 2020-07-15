@@ -1,18 +1,26 @@
 import React from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 function Start(props) {
+
   return (
     <div className="start">
       <div className="start-content">
-        <h1>Humus</h1>
-        <p>Beispiel Text lorem ipsum</p>
+        <CSSTransition className='heading' classNames='heading' in={true} timeout={{ enter: 500, exit: 300 }} appear>
+          <div>
+            <h1>Humus</h1>
+            <p>Die Mikrobiologie unserer Erde</p>
+          </div>
+        </CSSTransition>
       </div>
-      <div className="start-links">
-        <p>Starten</p>
+      <div className="start-link">
+        <CSSTransition className='link' classNames='link' in={true} timeout={{ enter: 500, exit: 300 }} appear>
+          <p onClick={props.startScenes}>Starten</p>
+        </CSSTransition>
       </div>
-      <div className="information">
+      {/* <div className="information">
         <p>Hier könnte Info stehen</p>
-      </div>
+      </div> */}
     </div>
   );
 }

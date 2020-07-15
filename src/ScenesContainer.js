@@ -6,6 +6,7 @@ import Pagination from './components/Pagination';
 import Sound from 'react-sound';
 import scenes from './components/scenes';
 import './Scene.css';
+import { CSSTransition } from 'react-transition-group';
 
 let intervalCountVolumeUp;
 
@@ -98,18 +99,18 @@ class ScenesContainer extends React.Component {
 
   render() {
 
+    let scene = this.state.scenes[this.state.activeScene -1];
+
     return (
-      <div className="app">        
+      <div className="scenes">        
         <Pagination               
           scenesSize={this.state.scenes.length}
           activeScene={this.state.activeScene}
           reload={this.reloadScene}
         />
         <Map activeScene={this.state.activeScene} {...this.props}/>
-        {this.state.scenes.map(scene => (
-          (this.state.activeScene - 1) === this.state.scenes.indexOf(scene) 
-          &&
-          <div className="scene-wrapper" key={scene.title}> 
+        <CSSTransition timeout={500} classNames='scene'>
+          <div className="scene-wrapper"> 
             <Navigation 
               key={`navigation-${scene.title}`}
               scene={scene} 
@@ -124,14 +125,16 @@ class ScenesContainer extends React.Component {
               activeScene={this.state.activeScene}
               scenes={scenes}
             />
-            <Sound
-              url={scene.sound}
-              playStatus={Sound.status.PLAYING}
-              volume={this.state.sound.volume}
-              onLoad={this.handleSoundAfterLoading}
-              onFinishedPlaying={this.handleSongFinishedPlaying}/>
+            {(this.props.scenesStarted
+              && <Sound
+                  url={scene.sound}
+                  playStatus={Sound.status.PLAYING}
+                  volume={this.state.sound.volume}
+                  onLoad={this.handleSoundAfterLoading}
+                  onFinishedPlaying={this.handleSongFinishedPlaying}/> 
+              )}
           </div>
-          ))}
+        </CSSTransition>
       </div>
     )
   }

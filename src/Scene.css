@@ -1,3 +1,5 @@
+@import './lib/animate.css';
+
 * {
   margin: 0;
   padding: 0;
@@ -16,10 +18,10 @@ p {
   color: #333;
 }
 
-.app {
+.app, .scenes {
   width: 100vw;
   height: 100vh;
-  background: #526b2d;
+  background: #3ABE9E;
   overflow: hidden;
 }
 
@@ -33,6 +35,8 @@ p {
   justify-content: space-between;
   width: 30%;
   border-left: 10px solid #3ABE9E;
+  border-top-right-radius: 25px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
 }
 
 .navigation-info {
@@ -102,6 +106,7 @@ p {
   padding: 10px 15px;
   border-radius: 25px;
   z-index: 1;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
 }
 
 .pagination p {
@@ -131,12 +136,50 @@ p {
   overflow-y: scroll;
   width: 30vw;
   height: 100vh;
-  
   background: #fff;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+  border-right: 10px solid #3ABE9E;
+}
+
+.touchpoint-enter {
+  right: -30vw;
+}
+.touchpoint-enter-active {
+  right: 0vw;
+  transition: right 600ms ease-in;
+  will-change: right;
+}
+.touchpoint-exit {
+  right: 0vw;
+}
+.touchpoint-exit-active {
+  right: -30vw;
+  transition: right 600ms ease-in;
+  will-change: right;
 }
 
 .touchpoint-content {
   padding: 50px;
+}
+
+.touchpoint-content h1 {
+  font-size: 26px;
+}
+
+.touchpoint-content h2 {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.touchpoint-content p {
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.touchpoint-content img {
+  max-width: 100%;
 }
 
 @keyframes sonar {
@@ -147,6 +190,18 @@ p {
     box-shadow: 0 0 0 15px rgba(235, 218, 134, 0.2), 0 0 4px 2px rgba(255, 255, 255, 0.2);
     opacity: 1;
   }
+}
+
+@keyframes opacity {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.map-point {
+  opacity: 0;
+  animation: 2000ms opacity ease;
+  animation-delay: 2000ms;
+  animation-fill-mode: forwards;
 }
 
 .sonar-icon {
@@ -171,6 +226,10 @@ span.sonar {
   animation-delay: 2005ms;
 }
 
+span.sonar:hover {
+  cursor: pointer;
+}
+
 /* Transition */
 
 .map {
@@ -188,26 +247,118 @@ span.sonar {
   left: -50vw;
   height: 250vh;
   width: 250vw;
-  background: url('../src/assets/svg/map.svg') 0 0 no-repeat;
+  background: url('../src/assets/png/map.png') 0 0 no-repeat;
+  background-size: 100% 100%;
   transform: translate3d(0px, 0px, 0);
-  transition: transform 2000ms ease-in;
+  transition: transform 2000ms ease-in-out;
   will-change: transform;
 }
 .map.map-active-scene-1::before {
-  transform: translate3d(-201px, -303px, 0);
+  transform: translate3d(300px, 300px, 0);
 }
 
 .map.map-active-scene-2::before{
-  transform: translate3d(-402px, -204px, 0);
+  transform: translate3d(-1250px, -350px, 0);
 }
 .map.map-active-scene-3::before {
-  transform: translate3d(-303px, -507px, 0);
+  transform: translate3d(-500px, -650px, 0);
 }
 .map.map-active-scene-4::before {
-  transform: translate3d(-200px, -400px, 0);
-
+  transform: translate3d(-250px, 150px, 0);
 }
 .map.map-active-scene-5::before {
-  transform: translate3d(-100px, -90px), 0;
+  transform: translate3d(-130px, -320px, 0);
+}
 
+
+/* Start */
+
+.start {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.start-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10vh;
+}
+
+.start-content h1 {
+  font-size: 83px;
+  margin-bottom: 13px;
+}
+
+.heading {
+  transition: opacity 0.8s ease;
+  opacity: 0;
+}
+
+.heading-appear-done {
+  opacity: 1;
+  animation: 0.8s fadeInDown ease;
+}
+
+.start-content p {
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.start-link {
+  margin-bottom: 10vh;
+}
+
+.link {
+  transition: opacity 0.8s ease;
+  opacity: 0;
+}
+
+.link-appear-done {
+  opacity: 1;
+  animation: 0.8s fadeInUp ease;
+}
+
+.start-link p {
+  padding: 10px 15px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #3ABE9E;;
+  border: 3px solid #3ABE9E;
+  transition: all 200ms ease-in;
+}
+
+.start-link p:hover {
+  cursor: pointer;
+  background-color: #3ABE9E;
+  color: #fff;
+}
+
+/* Scene */
+.scene-enter {
+  opacity: 0;
+}
+.scene-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.scene-exit .touchpoints {
+  opacity: 1;
+}
+.scene-exit-active .touchpoints {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
 }

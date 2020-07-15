@@ -22,8 +22,6 @@ class Touchpoint extends React.Component {
     return (
       <div className="touchpoint">
         <div className="touchpoint-content">
-          <h2>{this.props.name}</h2>
-          <p>{this.props.description}</p>
           <Markdown children={this.state.md} />
         </div>
       </div>
