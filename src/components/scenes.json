@@ -1,7 +1,7 @@
 [{
   "id": 1,
   "title": "Entstehung",
-  "description": "Really nice scene with really nice content",
+  "description": "Really nice scene with really nice content and some really cool stuff do to. Check it out and explore the lorem ipsum.",
   "coordinates": {
     "top": 500,
     "left": 200
@@ -10,8 +10,8 @@
   "touchpoints": [
     {
       "id": 1,
-      "name": "Interaction One",
-      "description": "Interaction with nice content",
+      "name": "Was ist Humus?",
+      "description": "",
       "coordinates": {
         "top": 200,
         "left": 100
@@ -34,7 +34,7 @@
     "top": 100,
     "left": 200
   },
-  "sound": "../sounds/farm.mp3",
+  "sound": "../sounds/city.mp3",
   "touchpoints": [
     {
       "id": 3,
@@ -83,7 +83,7 @@
     "top": 800,
     "left": 200
   },
-  "sound": "../sounds/farm.mp3",
+  "sound": "../sounds/city.mp3",
   "touchpoints": [
     {
       "id": 5,

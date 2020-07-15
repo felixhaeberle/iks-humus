@@ -8,8 +8,8 @@ function Navigation(props) {
         <p>{props.scene.description}</p>
       </div>
       <div className="navigation-links">
-        {props.activeScene !== 1 && <p className="prevItem" onClick={props.prev}>Prev</p> }
-        {props.activeScene !== props.scenesSize && <p className="nextItem" onClick={props.next}>Next</p> }
+        {props.activeScene !== 1 && <p className="arrow prevItem" onClick={props.prev}></p> }
+        {props.activeScene !== props.scenesSize && <p className="arrow nextItem" onClick={props.next}></p> }
       </div>
     </div>
   );

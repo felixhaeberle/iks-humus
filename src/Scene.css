@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  user-select: none;
 }
 
 body,
@@ -8,12 +9,18 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
+}
+
+p {
+  color: #333;
 }
 
 .app {
   width: 100vw;
   height: 100vh;
   background: #526b2d;
+  overflow: hidden;
 }
 
 .navigation {
@@ -21,15 +28,26 @@ html {
   bottom: 0;
   left: 0;
   background: #fff;
-  padding: 20px 60px 20px 40px;
+  padding: 25px 60px 20px 40px;
   display: flex;
   justify-content: space-between;
   width: 30%;
+  border-left: 10px solid #3ABE9E;
 }
 
 .navigation-info {
   padding-right: 30px;
+  display: flex;
+  flex-direction: column;
 }
+
+.navigation-info p {
+  color: #333;
+}
+
+/* .navigation-info p:last-child {
+  margin-top: auto;
+} */
 
 .navigation-links {
   display: flex;
@@ -38,7 +56,7 @@ html {
   min-height: 130px;
 }
 
-.navigation-links p {
+.navigation-links .arrow {
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -48,18 +66,21 @@ html {
   line-height: 50px;
   color: #fff;
   cursor: pointer;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
 }
 
-.navigation-links p:hover {
-  cursor: pointer;
-}
-
-.navigation-links p.prevItem {
+.navigation-links .arrow.prevItem {
   align-self: flex-end;
+  background: url(assets/svg/icon-arrow.svg) center center no-repeat;
+  background-size: 40px 40px;
+  transform: rotate(-90deg);
 }
 
-.navigation-links p.nextItem {
+.navigation-links .arrow.nextItem {
   margin-top: auto;
+  background: url(assets/svg/icon-arrow.svg) center center no-repeat;
+  background-size: 40px 40px;
+  transform: rotate(90deg);
 }
 
 h1, h2, h3 {
@@ -70,20 +91,57 @@ p {
   margin-bottom: 10px;
 }
 
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #eee;
+  padding: 10px 15px;
+  border-radius: 25px;
+  z-index: 1;
+}
+
+.pagination p {
+  margin-bottom: 0;
+}
+
+.pagination .reload {
+  position: relative;
+  top: 1px;
+  display: block;
+  height: 26px;
+  width: 26px;
+  margin-left: 10px;
+  background: url(assets/svg/reload.svg) center center no-repeat;
+  background-size: 26px 26px;
+}
+
+.pagination .reload:hover {
+  cursor: pointer;
+}
+
 .touchpoint {
   position: absolute;
   right: 0;
   top: 0;
   bottom: 0;
+  overflow-y: scroll;
   width: 30vw;
   height: 100vh;
-  padding: 50px;
+  
   background: #fff;
+}
+
+.touchpoint-content {
+  padding: 50px;
 }
 
 @keyframes sonar {
   from {
-    box-shadow: 0 0 0 0 #EBDA86, 0 0 4px 2px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 0 #3ABE9E, 0 0 4px 2px rgba(255, 255, 255, 0.2);
   }
   to {
     box-shadow: 0 0 0 15px rgba(235, 218, 134, 0.2), 0 0 4px 2px rgba(255, 255, 255, 0.2);
@@ -106,9 +164,9 @@ span.sonar {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #AD9200;
-  border: 3px solid #EBDA86;
-  opacity: 0;
+  background-color: #3ABE9E;
+  border: 3px solid #3ABE60;
+  opacity: 0.7;
   animation: sonar 2s ease-out infinite;
   animation-delay: 2005ms;
 }
@@ -126,13 +184,14 @@ span.sonar {
 .map::before {
   content: "";
   position: absolute;
-  top: -100vh;
-  left: -100vw;
-  height: 600vh;
-  width: 600vw;
-  background: url('/image/map.svg') 0 0 no-repeat;
+  top: -50vh;
+  left: -50vw;
+  height: 250vh;
+  width: 250vw;
+  background: url('../src/assets/svg/map.svg') 0 0 no-repeat;
   transform: translate3d(0px, 0px, 0);
   transition: transform 2000ms ease-in;
+  will-change: transform;
 }
 .map.map-active-scene-1::before {
   transform: translate3d(-201px, -303px, 0);
