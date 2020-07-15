@@ -14,7 +14,7 @@ html {
   overflow: hidden;
 }
 
-p {
+p, li {
   color: #333;
 }
 
@@ -173,7 +173,7 @@ p {
   margin-top: 20px;
 }
 
-.touchpoint-content p {
+.touchpoint-content p, .touchpoint-content li {
   line-height: 1.5;
   font-size: 14px;
 }
@@ -240,8 +240,7 @@ span.sonar:hover {
 }
 
 
-.map::before {
-  content: "";
+.map .map-item {
   position: absolute;
   top: -50vh;
   left: -50vw;
@@ -253,20 +252,19 @@ span.sonar:hover {
   transition: transform 2000ms ease-in-out;
   will-change: transform;
 }
-.map.map-active-scene-1::before {
+.map.map-active-scene-1 .map-item {
   transform: translate3d(300px, 300px, 0);
 }
-
-.map.map-active-scene-2::before{
+.map.map-active-scene-2 .map-item {
   transform: translate3d(-1250px, -350px, 0);
 }
-.map.map-active-scene-3::before {
+.map.map-active-scene-3 .map-item {
   transform: translate3d(-500px, -650px, 0);
 }
-.map.map-active-scene-4::before {
+.map.map-active-scene-4 .map-item {
   transform: translate3d(-250px, 150px, 0);
 }
-.map.map-active-scene-5::before {
+.map.map-active-scene-5 .map-item {
   transform: translate3d(-130px, -320px, 0);
 }
 
@@ -361,4 +359,208 @@ span.sonar:hover {
 .scene-exit-active .touchpoints {
   opacity: 0;
   transition: opacity 500ms ease-in;
+}
+
+
+/* Smoke */
+
+/* Smoke container */
+.map #smoke-1 {
+  position: absolute;
+  z-index: 3;
+  width: 1px;
+  height: 160px;
+  left: 39%;
+  bottom: 518px;
+  opacity: 0;
+}
+
+.map.map-active-scene-2 #smoke-1 {
+  animation: 2000ms opacity ease;
+  animation-delay: 2000ms;
+  animation-fill-mode: forwards;
+}
+
+/* smoke balls */
+#smoke-1 span {
+  display: block;
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  margin-left: -20px;
+  height: 0px;
+  width: 0px;
+  border: 35px solid #eeeeee;
+  border-radius: 35px;
+  left: -14px;
+  opacity: 0;
+  transform: scale(0.2);
+}
+
+/* Smoke animation */
+@keyframes smokeL {
+  0% {
+    transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(0.2) translate(0, -5px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) translate(-20px, -130px);
+  }
+}
+@keyframes smokeR {
+  0% {
+    transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(0.2) translate(0, -5px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) translate(20px, -130px);
+  }
+}
+#smoke-1 .s0 {
+  animation: smokeL 10s 0s infinite;
+}
+
+#smoke-1 .s1 {
+  animation: smokeR 10s 1s infinite;
+}
+
+#smoke-1 .s2 {
+  animation: smokeL 10s 2s infinite;
+}
+
+#smoke-1 .s3 {
+  animation: smokeR 10s 3s infinite;
+}
+
+#smoke-1 .s4 {
+  animation: smokeL 10s 4s infinite;
+}
+
+#smoke-1 .s5 {
+  animation: smokeR 10s 5s infinite;
+}
+
+#smoke-1 .s6 {
+  animation: smokeL 10s 6s infinite;
+}
+
+#smoke-1 .s7 {
+  animation: smokeR 10s 7s infinite;
+}
+
+#smoke-1 .s8 {
+  animation: smokeL 10s 8s infinite;
+}
+
+#smoke-1 .s9 {
+  animation: smokeR 10s 9s infinite;
+}
+
+
+/* Smoke container */
+.map #smoke-2 {
+  position: absolute;
+  z-index: 3;
+  width: 1px;
+  height: 160px;
+  left: 33%;
+  bottom: 560px;
+  opacity: 0;
+}
+
+.map.map-active-scene-2 #smoke-2 {
+  animation: 2000ms opacity ease;
+  animation-delay: 2500ms;
+  animation-fill-mode: forwards;
+}
+
+/* smoke balls */
+#smoke-2 span {
+  display: block;
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  margin-left: -20px;
+  height: 0px;
+  width: 0px;
+  border: 35px solid #eeeeee;
+  border-radius: 35px;
+  left: -14px;
+  opacity: 0;
+  transform: scale(0.2);
+}
+
+/* Smoke animation */
+@keyframes smokeL {
+  0% {
+    transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(0.2) translate(0, -5px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) translate(-20px, -130px);
+  }
+}
+@keyframes smokeR {
+  0% {
+    transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(0.2) translate(0, -5px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) translate(20px, -130px);
+  }
+}
+#smoke-2 .s0 {
+  animation: smokeL 10s 0s infinite;
+}
+
+#smoke-2 .s1 {
+  animation: smokeR 10s 1s infinite;
+}
+
+#smoke-2 .s2 {
+  animation: smokeL 10s 2s infinite;
+}
+
+#smoke-2 .s3 {
+  animation: smokeR 10s 3s infinite;
+}
+
+#smoke-2 .s4 {
+  animation: smokeL 10s 4s infinite;
+}
+
+#smoke-2 .s5 {
+  animation: smokeR 10s 5s infinite;
+}
+
+#smoke-2 .s6 {
+  animation: smokeL 10s 6s infinite;
+}
+
+#smoke-2 .s7 {
+  animation: smokeR 10s 7s infinite;
+}
+
+#smoke-2 .s8 {
+  animation: smokeL 10s 8s infinite;
+}
+
+#smoke-2 .s9 {
+  animation: smokeR 10s 9s infinite;
 }
