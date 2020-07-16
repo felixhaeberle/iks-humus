@@ -133,7 +133,6 @@ p {
   right: 0;
   top: 0;
   bottom: 0;
-  overflow-y: scroll;
   width: 30vw;
   height: 100vh;
   background: #fff;
@@ -142,6 +141,29 @@ p {
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
   border-right: 10px solid #3ABE9E;
 }
+
+.touchpoint-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.touchpoint .arrow.icon-x {
+  display: block;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  height: 40px;
+  width: 40px;
+  background: url(assets/svg/icon-x.svg) center center no-repeat;
+  background-size: 40px 40px;
+}
+
+.touchpoint .arrow.icon-x:hover {
+  cursor: pointer;
+}
+
 
 .touchpoint-enter {
   right: -30vw;
@@ -219,7 +241,7 @@ span.sonar {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #3ABE9E;
+  background-color: rgba(52, 171, 86, 0.75);
   border: 3px solid #3ABE60;
   opacity: 0.7;
   animation: sonar 2s ease-out infinite;

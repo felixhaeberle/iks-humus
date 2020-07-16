@@ -7,8 +7,8 @@ function Touchpoints(props) {
     <TransitionGroup className="touchpoints">
       {props.scene.touchpoints.map(touchpoint => (
         touchpoint.id === props.activeTouchpoint &&
-        <CSSTransition classNames='touchpoint' timeout={600} key={touchpoint.id} >
-          <Touchpoint {...touchpoint}/>
+        <CSSTransition classNames='touchpoint' timeout={600} key={touchpoint.id}>
+          <Touchpoint closeTouchpoint={props.closeTouchpoint} {...touchpoint}/>
         </CSSTransition>
       ))}
     </TransitionGroup>

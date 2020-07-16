@@ -17,13 +17,19 @@ class App extends React.Component {
     });
   }
 
+  reloadScene = () => {
+    this.setState({
+      started: false
+    });
+  }
+
   render() {
 
     return (
       <div className="app">
         {(this.state.started === false
           && <Start startScenes={this.handleStartScenes}/> )}
-          <ScenesContainer scenesStarted={this.state.started} />
+          <ScenesContainer reloadScene={this.reloadScene} scenesStarted={this.state.started} />
       </div>
     )
   }

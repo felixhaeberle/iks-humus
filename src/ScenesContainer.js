@@ -6,7 +6,6 @@ import Pagination from './components/Pagination';
 import Sound from 'react-sound';
 import scenes from './components/scenes';
 import './Scene.css';
-import { CSSTransition } from 'react-transition-group';
 
 let intervalCountVolumeUp;
 
@@ -16,6 +15,7 @@ class ScenesContainer extends React.Component {
     this.state = {
       scenes: scenes,
       activeScene: 1,
+      activeTouchpoint: null,
       sound: {
         volume: 0
       } 
@@ -23,6 +23,7 @@ class ScenesContainer extends React.Component {
   }
 
   nextScene = () => {
+    this.handleCloseTouchpoint();
     if(this.state.activeScene !== this.state.scenes.length) {
       this.setState(prevState => {
         return {
@@ -37,6 +38,7 @@ class ScenesContainer extends React.Component {
   }
 
   prevScene = () => {
+    this.handleCloseTouchpoint();
     if(this.state.activeScene !== 1) {
       this.setState(prevState => {
         return {
@@ -50,7 +52,20 @@ class ScenesContainer extends React.Component {
     }
   }
 
+  handleActiveTouchpoint = (activeTouchpoint) => {
+    this.setState({
+      activeTouchpoint: activeTouchpoint
+    })
+  }
+
+  handleCloseTouchpoint = () => {
+    this.setState({
+      activeTouchpoint: null
+    })
+  }
+
   reloadScene = () => {
+    this.props.reloadScene();
     this.setState({
       scenes: scenes,
       activeScene: 1,
@@ -109,32 +124,33 @@ class ScenesContainer extends React.Component {
           reload={this.reloadScene}
         />
         <Map activeScene={this.state.activeScene} {...this.props}/>
-        <CSSTransition timeout={500} classNames='scene'>
-          <div className="scene-wrapper"> 
-            <Navigation 
-              key={`navigation-${scene.title}`}
-              scene={scene} 
-              scenesSize={this.state.scenes.length}
-              activeScene={this.state.activeScene}
-              next={this.nextScene}
-              prev={this.prevScene} 
-            />
-            <Scene 
-              key={`scene-${scene.title}`} 
-              scene={scene} 
-              activeScene={this.state.activeScene}
-              scenes={scenes}
-            />
-            {(this.props.scenesStarted
-              && <Sound
-                  url={scene.sound}
-                  playStatus={Sound.status.PLAYING}
-                  volume={this.state.sound.volume}
-                  onLoad={this.handleSoundAfterLoading}
-                  onFinishedPlaying={this.handleSongFinishedPlaying}/> 
-              )}
-          </div>
-        </CSSTransition>
+        <div className="scene-wrapper"> 
+          <Navigation 
+            key={`navigation-${scene.title}`}
+            scene={scene} 
+            scenesSize={this.state.scenes.length}
+            activeScene={this.state.activeScene}
+            next={this.nextScene}
+            prev={this.prevScene} 
+          />
+          <Scene 
+            key={`scene-${scene.title}`} 
+            scene={scene}
+            activeScene={this.state.activeScene}
+            scenes={scenes}
+            activeTouchpoint={this.state.activeTouchpoint}
+            closeTouchpoint={this.handleCloseTouchpoint}
+            setActiveTouchpoint={this.handleActiveTouchpoint.bind(this)}
+          />
+          {(this.props.scenesStarted
+            && <Sound
+                url={scene.sound}
+                playStatus={Sound.status.PLAYING}
+                volume={this.state.sound.volume}
+                onLoad={this.handleSoundAfterLoading}
+                onFinishedPlaying={this.handleSongFinishedPlaying}/> 
+            )}
+        </div>
       </div>
     )
   }

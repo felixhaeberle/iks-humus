@@ -8,6 +8,7 @@ function Start(props) {
       <div className="start-content">
         <CSSTransition className='heading' classNames='heading' in={true} timeout={{ enter: 500, exit: 300 }} appear>
           <div>
+            <img alt="logo" src="./image/humus.svg"/>
             <h1>Humus</h1>
             <p>Die Mikrobiologie unserer Erde</p>
           </div>

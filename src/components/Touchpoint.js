@@ -21,8 +21,11 @@ class Touchpoint extends React.Component {
   render() {
     return (
       <div className="touchpoint">
-        <div className="touchpoint-content">
-          <Markdown children={this.state.md} />
+        <div className="touchpoint-wrapper">
+          <div onClick={() => this.props.closeTouchpoint()} className="arrow icon-x"></div>
+          <div className="touchpoint-content">
+            <Markdown children={this.state.md} />
+          </div>
         </div>
       </div>
     )
