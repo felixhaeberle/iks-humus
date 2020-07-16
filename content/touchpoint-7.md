@@ -11,5 +11,5 @@ Gar nicht pflügen und die Oberfläche nur leicht bearbeiten. Das erhält die na
 
  ![Alt-Text](./image/pestizide.svg)
 
-### Kein einsatz von Pestiziden
+### Kein Einsatz von Pestiziden
 Kein Einsatz von Chemischen Pestiziden und Chemischen Düngemittel. Sie töten das wichtige Bodenleben ab und zerstören so den Kreislauf der Natur. Resultat ist, noch mehr dünger, noch mehr Pestizide um den Ertragsmenge der Felder gleich zu halten. Ohne Bodenleben verliert der Boden seine Struktur und ist dadurch Erosion schutzlos ausgesetzt.
