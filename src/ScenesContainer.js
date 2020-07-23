@@ -88,7 +88,6 @@ class ScenesContainer extends React.Component {
   // }
 
   countVolumeUp = () => {
-    console.log(this.state.sound.volume)
     if(this.state.sound.volume > 90){
       this.stopInterval(intervalCountVolumeUp);
     } else {

@@ -26,13 +26,13 @@ class App extends React.Component {
   render() {
 
     return (
-      <div class="humus">
+      <div className="humus">
         <div className="app">
           {(this.state.started === false
             && <Start startScenes={this.handleStartScenes}/> )}
             <ScenesContainer reloadScene={this.reloadScene} scenesStarted={this.state.started} />
         </div>
-        <p>Interaktive Kommunikationssysteme | Felix Häberle, Tobias Ertel und Zacharie Reifegerst | 2020</p>
+        {/* <p>Interaktive Kommunikationssysteme | Felix Häberle, Tobias Ertel und Zacharie Reifegerst | 2020</p> */}
       </div>
     )
   }
