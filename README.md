@@ -1,3 +1,13 @@
+# Interaktive Kommunikationssysteme
+Felix Häberle, Tobias Ertel und Zacharie Reifegerst
+
+![5](https://user-images.githubusercontent.com/34959078/88322895-aab7ab80-cd21-11ea-967e-adc9f5ac5feb.png)
+
+
+
+–––––––––
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
