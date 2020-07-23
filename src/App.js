@@ -26,10 +26,13 @@ class App extends React.Component {
   render() {
 
     return (
-      <div className="app">
-        {(this.state.started === false
-          && <Start startScenes={this.handleStartScenes}/> )}
-          <ScenesContainer reloadScene={this.reloadScene} scenesStarted={this.state.started} />
+      <div class="humus">
+        <div className="app">
+          {(this.state.started === false
+            && <Start startScenes={this.handleStartScenes}/> )}
+            <ScenesContainer reloadScene={this.reloadScene} scenesStarted={this.state.started} />
+        </div>
+        <p>Interaktive Kommunikationssysteme | Felix Häberle, Tobias Ertel und Zacharie Reifegerst | 2020</p>
       </div>
     )
   }

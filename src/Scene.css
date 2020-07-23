@@ -1,5 +1,11 @@
 @import './lib/animate.css';
 
+:root {
+  --width: 1440px;
+  --height: 730px;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -10,19 +16,41 @@ body,
 html {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
   box-sizing: border-box;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 p, li {
   color: #333;
 }
 
+.humus > p {
+  padding: 45px;
+  text-align: center;
+  color: #666;
+  font-weight: 500;
+  font-size: 12px;
+}
+
 .app, .scenes {
-  width: 100vw;
-  height: 100vh;
+  width: var(--width);
+  height: var(--height);
   background: #3ABE9E;
   overflow: hidden;
+  position: relative;
+}
+
+.scene-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
 }
 
 .navigation {
@@ -33,7 +61,7 @@ p, li {
   padding: 25px 60px 20px 40px;
   display: flex;
   justify-content: space-between;
-  width: 30%;
+  width: 450px;
   border-left: 10px solid #3ABE9E;
   border-top-right-radius: 25px;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
@@ -133,8 +161,8 @@ p {
   right: 0;
   top: 0;
   bottom: 0;
-  width: 30vw;
-  height: 100vh;
+  width: 450px;
+  height: var(--height);
   background: #fff;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
@@ -255,8 +283,8 @@ span.sonar:hover {
 /* Transition */
 
 .map {
-  height: 100vh;
-  width: 100vw;
+  height: var(--height);
+  width: var(--width);
   position: relative;
   overflow: hidden;
 }
@@ -264,10 +292,10 @@ span.sonar:hover {
 
 .map .map-item {
   position: absolute;
-  top: -50vh;
-  left: -50vw;
-  height: 250vh;
-  width: 250vw;
+  top: -50%;
+  left: -50%;
+  height: 250%;
+  width: 250%;
   background: url('../src/assets/png/map.png') 0 0 no-repeat;
   background-size: 100% 100%;
   transform: translate3d(0px, 0px, 0);
@@ -299,8 +327,8 @@ span.sonar:hover {
   left: 0;
   bottom: 0;
   right: 0;
-  width: 100vw;
-  height: 100vh;
+  width: var(--width);
+  height: var(--height);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -314,7 +342,8 @@ span.sonar:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10vh;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .start-content h1 {

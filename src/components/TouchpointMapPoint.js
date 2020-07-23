@@ -2,7 +2,7 @@ import React from 'react';
 
 function TouchpointMapPoint(props) {
   const sonarPosition = {
-    position: 'fixed',
+    position: 'absolute',
     top: props.coordinates.top,
     left: props.coordinates.left
   }
